@@ -29,13 +29,16 @@ export default new Vuex.Store({
           });
     },
 
+    DELETE_USER(state, id){
+      state.users = state.users.filter(user => user.id != id);
+    }
+
   },
   actions: {
 
     SET_USERS(context) {
       context.commit('SET_USERS');
-      console.log('action satrt');
-    }
+    },
 
   },
   modules: {

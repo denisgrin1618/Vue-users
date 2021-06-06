@@ -1,6 +1,6 @@
 <template>
 
-
+<transition name="slide-fade">
 <div class="m-2 grid grid-cols-6 gap-x-0 gap-y-0 max-w-lg mx-auto">
 
 
@@ -59,7 +59,8 @@
       
 
 
-      <div       
+      <div   
+        @click="deleteUser"    
         @mouseover="btn_del='-ml-1'"
         @mouseleave="btn_del='-ml-4'"
         :class='"border border-pur bg-red-400 mt-7 shadow-md w-24 z-0 cursor-pointer "+btn_del'
@@ -78,6 +79,8 @@
     </div>
 
   </div>
+
+  </transition>
 </template>
 
 <script>
@@ -88,7 +91,7 @@ export default {
   data(){
     return {
       btn_edit:'-ml-4',
-      btn_del:'-ml-4'
+      btn_del:'-ml-4',
     }
   },
 
@@ -96,11 +99,31 @@ export default {
     console.log(this.user);
   },
 
+  methods:{
+    deleteUser(){
+      console.log(this.$store.state);
+
+      this.$store.commit('DELETE_USER', this.user.id);
+    }
+  }
+
 }
 </script>
 
 <style scoped>
   .bg {
     background: url(../assets/dot2.png)
+  }
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active до версии 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
   }
 </style>

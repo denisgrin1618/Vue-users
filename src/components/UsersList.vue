@@ -1,8 +1,9 @@
 <template>
   <div class="flex flex-col gap-x-0 gap-y-0">
     
-      <user-item v-for="user in this.$store.state.users" :key="user.id" :user="user"/>
 
+    
+      <user-item v-for="user in this.$store.state.users" :key="user.id" :user="user"/>
 
       
   </div>
@@ -39,4 +40,7 @@ export default {
 
 <style scoped>
 
+
+
+ 
 </style>
