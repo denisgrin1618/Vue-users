@@ -15,12 +15,10 @@
             </div>
 
             <div class="p-3">
-              <img class="border-4 border-pur h-40 rounded bg-blue-300 sm:mx-0 " 
-                  :src="user.avatar"
-                  alt="Woman's Face">
-                <div class="text-2xl text-pur font-cookie whitespace-nowrap">
-                  {{user.last_name}} {{user.first_name}}
-                </div>
+              <img class="border-4 border-pur h-40 rounded bg-blue-300 sm:mx-0" :src="user.avatar">
+              <div class="text-2xl text-pur font-cookie whitespace-nowrap">
+                {{user.last_name}} {{user.first_name}}
+              </div>
             </div>
             
             <div class="flex flex-col col-span-2 text-left  sm:text-left pt-3">
@@ -86,7 +84,7 @@
             
             <div  class="col-span-3 border-b-4 border-pur h-14 py-2 ">
               <p class="text-3xl text-pur font-black">
-                IDENTIFICATION BACK
+                IDENTIFICATION CARD
               </p>
             </div>
 

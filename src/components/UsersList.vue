@@ -2,7 +2,10 @@
   <div class="flex flex-col gap-x-0 gap-y-0">
     
     <transition-group name=fade>
-      <user-item v-for="user in this.$store.state.users" :key="user.id" :user="user" :class_user='" line"'/>
+      <user-item v-for="user in this.$store.state.users" 
+        :key="user.id" 
+        :user="user" 
+        :class_user='" line"'/>
     </transition-group>
       
   </div>
