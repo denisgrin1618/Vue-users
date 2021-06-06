@@ -1,17 +1,15 @@
 <template>
-  <div v-bind:class="flipped ? 'flip-container flipped': 'flip-container'">
+  <div v-bind:class="class_aditional + (flipped ? ' flip-container flipped': ' flip-container')">
     <div class="flipper">
       <div class="front">
         <slot name="front" v-on:click="flipped=true"></slot>
-        <div class="frontFlipBtn" 
-            v-on:click="flipped=true">
+        <div v-on:click="flipped=true">
             redo
         </div>
       </div>
       <div class="back">
-        <slot name="back"></slot>
-        <div class="backFlipBtn" 
-            v-on:click="flipped=false">
+        <slot name="back" v-on:click="flipped=false"></slot>
+        <div v-on:click="flipped=false">
             redo
         </div>
       </div>
@@ -22,6 +20,7 @@
 <script>
 export default {
   name: 'FlipCard',
+  props: ['class_aditional'],
   data: function() {
     return {
         flipped: false
