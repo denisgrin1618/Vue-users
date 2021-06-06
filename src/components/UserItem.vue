@@ -1,10 +1,6 @@
 <template>
 
-<transition name="slide-fade">
-<div class="m-2 grid grid-cols-6 gap-x-0 gap-y-0 max-w-lg mx-auto">
-
-
-
+<div :class='"line m-2 grid grid-cols-6 gap-x-0 gap-y-0 max-w-lg mx-auto"+class_user'>
 
     <div class="bg z-10 col-span-5 m-2 grid grid-cols-3 gap-x-0 gap-y-0 border-4 border-pur px-0  max-w-md mx-auto rounded-3xl shadow-lg ">
       
@@ -57,8 +53,6 @@
 
     <div class="flex flex-col"> 
       
-
-
       <div   
         @click="deleteUser"    
         @mouseover="btn_del='-ml-1'"
@@ -80,13 +74,12 @@
 
   </div>
 
-  </transition>
 </template>
 
 <script>
 export default {
   name: 'UserItem',
-  props: ['user'],
+  props: ['user', 'class_user'],
 
   data(){
     return {
@@ -113,17 +106,5 @@ export default {
 <style scoped>
   .bg {
     background: url(../assets/dot2.png)
-  }
-
-.slide-fade-enter-active {
-    transition: all .3s ease;
-  }
-  .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active до версии 2.1.8 */ {
-    transform: translateX(10px);
-    opacity: 0;
   }
 </style>
