@@ -2,6 +2,16 @@
   <div class="flex flex-col gap-x-0 gap-y-0">
     
 
+  <flip-card>
+    <template slot="front">
+      <span>Hey loser</span>
+    </template>
+    <template slot="back">
+      <span>Thought u could get rid of me loser?</span>
+    </template>
+  </flip-card>
+
+
     <transition-group name=fade>
       <user-item v-for="user in this.$store.state.users" :key="user.id" :user="user" :class_user='" line"'/>
     </transition-group>
@@ -11,6 +21,7 @@
 
 <script>
 import UserItem from './UserItem.vue'
+import FlipCard from './FlipCard.vue';
 
 export default {
   name: 'UsersList',
@@ -18,7 +29,8 @@ export default {
     msg: String
   },
   components: {
-    UserItem
+    UserItem,
+    FlipCard
   },
   computed: {
     users () {
